@@ -79,10 +79,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Meu Livro Publicado — Publicação independente para autores" },
       { name: "description", content: "Serviço editorial completo para autores autopublicadores: revisão, design, capa, impressão e marketing. +20 anos de experiência." },
-      { property: "og:title", content: "Meu Livro Publicado" },
-      { property: "og:description", content: "Da ideia ao livro nas tuas mãos — sem complicações." },
+      { property: "og:title", content: "Meu Livro Publicado — Publicação independente para autores" },
+      { property: "og:description", content: "Serviço editorial completo para autores autopublicadores: revisão, design, capa, impressão e marketing. +20 anos de experiência." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "Meu Livro Publicado — Publicação independente para autores" },
+      { name: "twitter:description", content: "Serviço editorial completo para autores autopublicadores: revisão, design, capa, impressão e marketing. +20 anos de experiência." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d86838ac-0a01-4653-91f5-d092fa73a25f/id-preview-75c668bd--b1f267c3-ec16-4140-8472-9f70b7ee98c4.lovable.app-1781016814208.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d86838ac-0a01-4653-91f5-d092fa73a25f/id-preview-75c668bd--b1f267c3-ec16-4140-8472-9f70b7ee98c4.lovable.app-1781016814208.png" },
     ],
     links: [
       {
