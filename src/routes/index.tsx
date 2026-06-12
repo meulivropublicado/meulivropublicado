@@ -88,32 +88,32 @@ function Counter({ end, prefix = "", suffix = "" }: { end: number; prefix?: stri
   return (
     <span ref={ref}>
       {prefix}
-      {val.toLocaleString("pt-PT")}
+      {end === 200000 ? "200 mil" : val.toLocaleString("pt-PT")}
       {suffix}
     </span>
   );
 }
 
 const services = [
-  { icon: PenLine, title: "Revisão ortográfica e gramatical", desc: "Português europeu, padrão editorial. Revisão linguística, sintática e de estilo, garantindo um texto limpo e fluente." },
+  { icon: PenLine, title: "Revisão ortográfica e gramatical", desc: "Revisão linguística, sintática e de estilo no padrão editorial, realizada por profissionais qualificados, garantindo um texto limpo e fluente." },
   { icon: Layout, title: "Design editorial e paginação", desc: "Miolo profissional para livro físico e ebook, com tipografia cuidada e composição que respeita a leitura." },
   { icon: Palette, title: "Design de capa", desc: "Conceito visual original que traduz a identidade da obra e capta o leitor à primeira vista." },
-  { icon: Printer, title: "Gestão de impressão e entrega", desc: "Acompanhamos a impressão com gráficas parceiras de confiança e tratamos da logística até ao autor." },
-  { icon: Megaphone, title: "Marketing digital e redes sociais", desc: "Meta Ads, Google Ads e gestão de conteúdo para dar visibilidade ao teu livro e ao teu nome de autor." },
-  { icon: BookOpen, title: "Acompanhamento personalizado", desc: "Um interlocutor dedicado em cada etapa, do primeiro contacto à entrega do exemplar impresso." },
+  { icon: Printer, title: "Impressão e entrega", desc: "Preparação de todos os ficheiros de acordo com os padrões gráficos ou digitais para garantir alta qualidade e valorização do teu livro." },
+  { icon: Megaphone, title: "Marketing digital e redes sociais", desc: "Estratégias de conteúdo, gestão das redes sociais e campanhas para autores que desejam alcançar mais leitores." },
+  { icon: BookOpen, title: "Consultoria personalizada", desc: "Dedicação total em cada etapa da produção do livro, do primeiro contacto à entrega do exemplar impresso." },
 ];
 
 const stats = [
   { value: 400, prefix: "+", label: "Autores acompanhados" },
   { value: 700, prefix: "+", label: "Obras publicadas" },
   { value: 200000, prefix: "+", label: "Livros impressos" },
-  { value: 20, suffix: "+", label: "Anos de experiência" },
+  { value: 20, prefix: "+", label: "Anos de experiência" },
 ];
 
 const testimonials = [
-  { name: "Maria J.", city: "Porto", text: "Nunca pensei que conseguiria publicar o meu livro. O apoio foi completo, desde a revisão até ao livro nas minhas mãos." },
-  { name: "António R.", city: "Lisboa", text: "Profissionalismo e atenção ao detalhe em cada etapa. A capa superou todas as minhas expectativas." },
-  { name: "Sofia L.", city: "Coimbra", text: "Senti-me acompanhada do início ao fim. Recomendo a qualquer autor que sonhe ver a sua obra impressa." },
+  { name: "Gerson dos Santos.", city: "Livro técnico", text: "Ao longo de alguns anos o Sérgio tem publicado todos os meus livros com muita dedicação e profissionalismo. Estou extremamente grato e satisfeito." },
+  { name: "Marina Alves", city: "Poesia", text: "Quando entreguei os meus poemas ao Sergio, eu não sabia como seria ver minha alma impressa em papel. O livro ficou lindo, é meu, é nosso. Foi a melhor decisão confiar nele." },
+  { name: "Aldo Nora.", city: "Contos e Poesias", text: "Já publiquei dois livros com o Sérgio. A maior vitória foi ver minha família orgulhosa. Sempre ouviram minhas histórias, mas agora elas estão registradas em formato de livros." },
 ];
 
 const steps = [
@@ -186,10 +186,10 @@ function Index() {
         <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-2 md:py-28">
           <div className="mlp-reveal">
             <p className="mb-5 inline-block border-l-2 pl-3 text-sm uppercase tracking-[0.2em]" style={{ borderColor: ORANGE, color: GREEN }}>
-              Editorial independente · desde 2003
+              PUBLICAÇÃO INDEPENDENTE
             </p>
             <h1 className="font-display text-5xl leading-[1.05] md:text-6xl" style={{ color: GREEN }}>
-              O teu manuscrito merece <em className="not-italic" style={{ color: ORANGE }}>virar livro</em>
+              O teu manuscrito merece <em className="not-italic" style={{ color: ORANGE }}>virar livro.</em>
             </h1>
             <p className="mt-6 max-w-md text-lg" style={{ color: "#3d3d3d" }}>
               Do manuscrito ao livro impresso, transformamos o seu sonho em realidade com revisão detalhada, design personalizado e capa profissional.
@@ -225,9 +225,9 @@ function Index() {
       <section id="sobre" className="bg-white py-24">
         <div className="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-12">
           <div className="mlp-reveal md:col-span-5">
-            <p className="mb-4 text-xs uppercase tracking-[0.25em]" style={{ color: ORANGE }}>Sobre</p>
+            <p className="mb-4 text-xs uppercase tracking-[0.25em]" style={{ color: ORANGE }}>PUBLICAÇÃO INDEPENDENTE</p>
             <h2 className="font-display text-4xl leading-tight md:text-5xl" style={{ color: GREEN }}>
-              Editores ao lado de quem escreve.
+              Profissionais ao lado de quem escreve.
             </h2>
           </div>
           <div className="mlp-reveal md:col-span-7">
@@ -245,7 +245,7 @@ function Index() {
           <div className="mlp-reveal mb-14 max-w-2xl">
             <p className="mb-4 text-xs uppercase tracking-[0.25em]" style={{ color: ORANGE }}>Serviços</p>
             <h2 className="font-display text-4xl leading-tight md:text-5xl" style={{ color: GREEN }}>
-              Tudo o que o teu livro precisa.
+              Tudo o que o teu livro precisa, num só lugar.
             </h2>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -279,11 +279,10 @@ function Index() {
           <div className="mb-12 flex flex-col gap-4">
             <div className="flex items-center gap-6">
               <span className="h-px w-16" style={{ backgroundColor: GREEN, opacity: 0.4 }} />
-              <p className="text-xs uppercase tracking-[0.25em]" style={{ color: GREEN }}>Em números</p>
+              <p className="text-xs uppercase tracking-[0.25em]" style={{ color: GREEN }}>20 ANOS TRADUZIDOS EM NÚMEROS</p>
             </div>
             <div className="text-sm font-medium whitespace-pre-line" style={{ color: GREEN }}>
-              Mais de 20 anos a entregar excelência editorial para autores e editoras de todos os estilos — da revisão ao design de capa, da paginação ao livro impresso nas suas mãos.{"\n"}
-              Transformamos o seu manuscrito num livro de qualidade profissional, acompanhando cada etapa da publicação independente.
+              {"\n"}
             </div>
           </div>
           <div className="grid gap-10 md:grid-cols-4">
@@ -407,7 +406,7 @@ function Index() {
                     className="flex h-10 w-10 items-center justify-center rounded-full font-display text-sm text-white"
                     style={{ backgroundColor: GREEN }}
                   >
-                    {t.name.charAt(0)}
+                    {t.name.split(" ").map(n => n[0]).join("").substring(0, 2).toUpperCase()}
                   </div>
                   <div>
                     <p className="text-sm font-medium" style={{ color: GREEN }}>{t.name}</p>
