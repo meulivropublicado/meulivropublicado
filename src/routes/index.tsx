@@ -348,50 +348,23 @@ function Index() {
       {/* PORTFOLIO */}
       <section id="portfolio" className="bg-white py-24">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="mlp-reveal mb-10 flex flex-wrap items-end justify-between gap-6">
+          <div className="mlp-reveal mb-10">
             <div className="max-w-xl">
               <p className="mb-4 text-xs uppercase tracking-[0.25em]" style={{ color: ORANGE }}>Portfolio</p>
               <h2 className="font-display text-4xl leading-tight md:text-5xl" style={{ color: GREEN }}>
                 Algumas obras que ajudamos a nascer.
               </h2>
             </div>
-            <div className="flex flex-wrap gap-2">
-              {filters.map((f) => {
-                const active = f === filter;
-                return (
-                  <button
-                    key={f}
-                    onClick={() => setFilter(f)}
-                    className="rounded-full border px-4 py-2 text-xs font-medium transition"
-                    style={{
-                      borderColor: active ? ORANGE : GREEN,
-                      backgroundColor: active ? ORANGE : "transparent",
-                      color: active ? "#fff" : GREEN,
-                    }}
-                  >
-                    {f}
-                  </button>
-                );
-              })}
-            </div>
           </div>
-          <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
-            {visible.map((p) => (
-              <figure key={p.title} className="mlp-reveal group">
-                <div className="overflow-hidden rounded-sm bg-[color:var(--brand-cream)]">
-                  <img
-                    src={portfolioImg}
-                    alt={p.title}
-                    loading="lazy"
-                    width={800}
-                    height={1000}
-                    className="aspect-[4/5] w-full object-cover transition duration-500 group-hover:scale-[1.03]"
-                  />
-                </div>
-                <figcaption className="mt-3">
-                  <p className="font-display text-sm" style={{ color: GREEN }}>{p.title}</p>
-                  <p className="text-xs" style={{ color: "#888" }}>{p.author}</p>
-                </figcaption>
+          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+            {portfolioImages.map((img, i) => (
+              <figure key={i} className="mlp-reveal group overflow-hidden rounded-sm">
+                <img
+                  src={img.url}
+                  alt=""
+                  loading="lazy"
+                  className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                />
               </figure>
             ))}
           </div>
