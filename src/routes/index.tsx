@@ -126,10 +126,11 @@ const steps = [
 
 const faqs = [
   { q: "Quanto tempo demora o processo?", a: "Em média, entre 10 e 20 semanas, dependendo da extensão do manuscrito e dos serviços contratados." },
-  { q: "Preciso de ter o texto finalizado para pedir orçamento?", a: "Não. Podemos analisar mesmo um manuscrito ainda em rascunho e indicar o melhor caminho." },
-  { q: "Fazem distribuição em livrarias?", a: "Trabalhamos sobretudo o modelo de autopublicação, mas aconselhamos sobre canais de venda online e em livrarias parceiras." },
-  { q: "Qual é o número mínimo de exemplares para impressão?", a: "Trabalhamos a partir de 50 exemplares, com escalas otimizadas para cada tiragem." },
-  { q: "Trabalham com autores fora de Portugal?", a: "Sim. Acompanhamos autores lusófonos em qualquer parte do mundo, com entrega internacional." },
+  { q: "Preciso de ter o texto finalizado para pedir orçamento?", a: "Não. Podes solicitar orçamento se já tiveres um número aproximado de páginas e o formato desejado de livro. No entanto, quanto mais informações concretas, mais preciso será o orçamento." },
+  { q: "Fazem distribuição em livrarias?", a: "Preparamos os ficheiros e apoiamos o processo de distribuição, mas a distribuição em cadeia de livrarias é gerida diretamente pelo autor. Podemos orientar sobre as melhores opções disponíveis para autores independentes em Portugal e no Brasil." },
+  { q: "Qual é o número mínimo de exemplares para impressão?", a: "Trabalhamos com gráficas parceiras que permitem tiragem a partir de 1 exemplar, ou seja, não é necessário ter um stock mínimo. No entanto, sugerimos uma quantidade mínima de 50 unidades para ter um investimento por exemplar muito mais vantajoso." },
+  { q: "Trabalham com autores fora de Portugal?", a: "Sim. Além de Portugal atendemos autores em Espanha e Brasil." },
+  { q: "Os direitos do livro ficam comigo?", a: "Sim, sempre. O Meu Livro Publicado presta um serviço editorial, portanto todos os direitos da obra pertencem inteiramente ao autor e nunca cedemos os teus direitos a terceiros." },
 ];
 
 const portfolioFilters = ["Ficção", "Não-ficção", "Poesia", "Técnico", "Infantil"];
