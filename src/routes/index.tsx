@@ -18,7 +18,7 @@ import {
   Quote,
   ArrowRight,
 } from "lucide-react";
-import heroBooks from "@/assets/hero-books.jpg";
+import heroBooks from "@/assets/sergio-portrait.png.asset.json";
 import portfolioImg from "@/assets/portfolio-1.jpg";
 import logo from "@/assets/logo-horizontal.png.asset.json";
 
@@ -263,8 +263,8 @@ function Index() {
           <div className="mlp-reveal relative">
             <div className="absolute -left-4 -top-4 h-full w-full rounded-sm border" style={{ borderColor: GREEN }} />
             <img
-              src={heroBooks}
-              alt="Livro aberto sobre fundo de papel"
+              src={heroBooks.url}
+              alt="Sérgio Santos, fundador do Meu Livro Publicado"
               width={1280}
               height={960}
               className="relative w-full rounded-sm object-cover"
