@@ -19,8 +19,19 @@ import {
   ArrowRight,
 } from "lucide-react";
 import heroBooks from "@/assets/sergio-portrait.png.asset.json";
-import portfolioImg from "@/assets/portfolio-1.jpg";
 import logo from "@/assets/logo-horizontal.png.asset.json";
+import port1 from "@/assets/portfolio/ARTE_-_alfabetizacao.jpg.asset.json";
+import port2 from "@/assets/portfolio/ARTE_-_camaqua.jpg.asset.json";
+import port3 from "@/assets/portfolio/ARTE_-_direito_internacional.jpg.asset.json";
+import port4 from "@/assets/portfolio/ARTE_-_Interamigos.jpg.asset.json";
+import port5 from "@/assets/portfolio/ARTE_-_memoria_e_cultura.jpg.asset.json";
+import port6 from "@/assets/portfolio/ARTE_-_mosaico.jpg.asset.json";
+import port7 from "@/assets/portfolio/ARTE_-_planificando.jpg.asset.json";
+import port8 from "@/assets/portfolio/ARTE_-_politica_sociedade.jpg.asset.json";
+import port9 from "@/assets/portfolio/ARTE_-_recrie.jpg.asset.json";
+import port10 from "@/assets/portfolio/ARTE_-_retratos.jpg.asset.json";
+
+const portfolioImages = [port1, port2, port3, port4, port5, port6, port7, port8, port9, port10];
 
 const TikTokIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
@@ -148,21 +159,10 @@ const faqs = [
   { q: "Os direitos do livro ficam comigo?", a: "Sim, sempre. O Meu Livro Publicado presta um serviço editorial, portanto todos os direitos da obra pertencem inteiramente ao autor e nunca cedemos os teus direitos a terceiros." },
 ];
 
-const portfolioFilters = ["Ficção", "Não-ficção", "Poesia", "Técnico", "Infantil"];
-
-const portfolioItems = Array.from({ length: 8 }).map((_, i) => ({
-  title: ["Voz Adentro", "O Caminho das Águas", "Manual do Cuidador", "Pequenos Versos", "Histórias do Tejo", "Guia da Floresta", "Onde Mora o Tempo", "Cartas a Lisboa"][i],
-  author: ["Ana Mendes", "Pedro Lima", "Dra. Rita Faria", "João Costa", "Marta Sousa", "Luís Barreto", "Helena Pires", "Carlos Tavares"][i],
-  category: portfolioFilters[i % portfolioFilters.length],
-}));
-
 function Index() {
   useReveal();
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const [filter, setFilter] = useState<string>("Todos");
   const [menuOpen, setMenuOpen] = useState(false);
-  const filters = ["Todos", ...portfolioFilters];
-  const visible = filter === "Todos" ? portfolioItems : portfolioItems.filter((p) => p.category === filter);
 
   return (
     <div className="min-h-screen bg-white" style={{ color: "#2a2a2a" }}>
@@ -348,50 +348,23 @@ function Index() {
       {/* PORTFOLIO */}
       <section id="portfolio" className="bg-white py-24">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="mlp-reveal mb-10 flex flex-wrap items-end justify-between gap-6">
+          <div className="mlp-reveal mb-10">
             <div className="max-w-xl">
               <p className="mb-4 text-xs uppercase tracking-[0.25em]" style={{ color: ORANGE }}>Portfolio</p>
               <h2 className="font-display text-4xl leading-tight md:text-5xl" style={{ color: GREEN }}>
                 Algumas obras que ajudamos a nascer.
               </h2>
             </div>
-            <div className="flex flex-wrap gap-2">
-              {filters.map((f) => {
-                const active = f === filter;
-                return (
-                  <button
-                    key={f}
-                    onClick={() => setFilter(f)}
-                    className="rounded-full border px-4 py-2 text-xs font-medium transition"
-                    style={{
-                      borderColor: active ? ORANGE : GREEN,
-                      backgroundColor: active ? ORANGE : "transparent",
-                      color: active ? "#fff" : GREEN,
-                    }}
-                  >
-                    {f}
-                  </button>
-                );
-              })}
-            </div>
           </div>
-          <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
-            {visible.map((p) => (
-              <figure key={p.title} className="mlp-reveal group">
-                <div className="overflow-hidden rounded-sm bg-[color:var(--brand-cream)]">
-                  <img
-                    src={portfolioImg}
-                    alt={p.title}
-                    loading="lazy"
-                    width={800}
-                    height={1000}
-                    className="aspect-[4/5] w-full object-cover transition duration-500 group-hover:scale-[1.03]"
-                  />
-                </div>
-                <figcaption className="mt-3">
-                  <p className="font-display text-sm" style={{ color: GREEN }}>{p.title}</p>
-                  <p className="text-xs" style={{ color: "#888" }}>{p.author}</p>
-                </figcaption>
+          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+            {portfolioImages.map((img, i) => (
+              <figure key={i} className="mlp-reveal group overflow-hidden rounded-sm">
+                <img
+                  src={img.url}
+                  alt=""
+                  loading="lazy"
+                  className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                />
               </figure>
             ))}
           </div>
