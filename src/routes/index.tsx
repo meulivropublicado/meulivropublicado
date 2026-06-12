@@ -189,7 +189,7 @@ function Index() {
               Editorial independente · desde 2003
             </p>
             <h1 className="font-display text-5xl leading-[1.05] md:text-6xl" style={{ color: GREEN }}>
-              Meu Livro <em className="not-italic" style={{ color: ORANGE }}>Publicado</em>
+              O teu manuscrito merece <em className="not-italic" style={{ color: ORANGE }}>virar livro</em>
             </h1>
             <p className="mt-6 max-w-md text-lg" style={{ color: "#3d3d3d" }}>
               Da ideia ao livro nas tuas mãos — sem complicações.
