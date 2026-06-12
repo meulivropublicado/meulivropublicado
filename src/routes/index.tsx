@@ -352,7 +352,7 @@ function Index() {
             <div className="max-w-xl">
               <p className="mb-4 text-xs uppercase tracking-[0.25em]" style={{ color: ORANGE }}>Portfolio</p>
               <h2 className="font-display text-4xl leading-tight md:text-5xl" style={{ color: GREEN }}>
-                Obras que ajudamos a nascer.
+                Algumas obras que ajudamos a nascer.
               </h2>
             </div>
             <div className="flex flex-wrap gap-2">
