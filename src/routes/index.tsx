@@ -192,7 +192,7 @@ function Index() {
               O teu manuscrito merece <em className="not-italic" style={{ color: ORANGE }}>virar livro</em>
             </h1>
             <p className="mt-6 max-w-md text-lg" style={{ color: "#3d3d3d" }}>
-              O Meu livro Publicado é um projeto idealizado para ajudar autores independentes em todas as etapas de produção do seu livro. Do manuscrito à capa, transformamos o seu sonho em realidade com revisão detalhada, design personalizado e impressão profissional.
+              Do manuscrito ao livro impresso, transformamos o seu sonho em realidade com revisão detalhada, design personalizado e capa profissional.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <a
@@ -231,12 +231,9 @@ function Index() {
             </h2>
           </div>
           <div className="mlp-reveal md:col-span-7">
-            <p className="text-lg leading-relaxed" style={{ color: "#3d3d3d" }}>
-              O <strong style={{ color: GREEN }}>Meu Livro Publicado</strong> é um serviço editorial completo dedicado a autores
-              independentes que desejam publicar as suas obras com qualidade profissional, sem depender
-              das editoras tradicionais. Acompanhamos cada projeto em todas as etapas — da revisão ao
-              livro impresso — com atenção personalizada e experiência de mais de
-              <span style={{ color: ORANGE }}> 20 anos</span> no setor editorial.
+            <p className="text-lg leading-relaxed whitespace-pre-line" style={{ color: "#3d3d3d" }}>
+              O <strong style={{ color: GREEN }}>Meu Livro Publicado</strong> é um projeto idealizado por Sérgio Santos, profissional com mais de 20 anos de experiência no setor editorial, dedicado a ajudar autores independentes a concretizarem o sonho de publicar as suas obras.{"\n"}
+              Acreditamos que uma boa história não deve ficar na gaveta por falta de oportunidades. Por isso, oferecemos um serviço completo e personalizado, trabalhando lado a lado com cada autor para transformar ideias em livros de qualidade profissional, respeitando a sua identidade e garantindo um resultado à altura do seu talento.
             </p>
           </div>
         </div>
@@ -279,9 +276,15 @@ function Index() {
       {/* NÚMEROS */}
       <section className="bg-white py-24">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="mb-12 flex items-center gap-6">
-            <span className="h-px w-16" style={{ backgroundColor: GREEN, opacity: 0.4 }} />
-            <p className="text-xs uppercase tracking-[0.25em]" style={{ color: GREEN }}>Em números</p>
+          <div className="mb-12 flex flex-col gap-4">
+            <div className="flex items-center gap-6">
+              <span className="h-px w-16" style={{ backgroundColor: GREEN, opacity: 0.4 }} />
+              <p className="text-xs uppercase tracking-[0.25em]" style={{ color: GREEN }}>Em números</p>
+            </div>
+            <div className="text-sm font-medium whitespace-pre-line" style={{ color: GREEN }}>
+              Mais de 20 anos a entregar excelência editorial para autores e editoras de todos os estilos — da revisão ao design de capa, da paginação ao livro impresso nas suas mãos.{"\n"}
+              Transformamos o seu manuscrito num livro de qualidade profissional, acompanhando cada etapa da publicação independente.
+            </div>
           </div>
           <div className="grid gap-10 md:grid-cols-4">
             {stats.map((s) => (
