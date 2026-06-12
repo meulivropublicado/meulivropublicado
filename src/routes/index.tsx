@@ -523,7 +523,7 @@ function Index() {
                   Conta-nos a tua ideia. Respondemos a cada mensagem com uma análise personalizada e sem compromisso.
                 </p>
                 <a
-                  href="https://wa.me/351000000000"
+                  href="https://wa.me/351912653896"
                   target="_blank"
                   rel="noreferrer"
                   className="mt-8 inline-flex items-center gap-2 rounded-full border-2 px-5 py-3 text-sm font-medium transition hover:bg-white"
@@ -586,9 +586,11 @@ function Index() {
             </p>
           </div>
           <div className="flex items-center gap-4" style={{ color: GREEN }}>
-            <a href="#" aria-label="Instagram" className="hover:opacity-70"><Instagram className="h-5 w-5" /></a>
-            <a href="#" aria-label="Facebook" className="hover:opacity-70"><Facebook className="h-5 w-5" /></a>
-            <a href="#" aria-label="LinkedIn" className="hover:opacity-70"><Linkedin className="h-5 w-5" /></a>
+            <a href="https://www.instagram.com/sergio.publicaseulivro/" target="_blank" rel="noreferrer" aria-label="Instagram" className="hover:opacity-70"><Instagram className="h-5 w-5" /></a>
+            <a href="https://www.facebook.com/sergio.publicaseulivro" target="_blank" rel="noreferrer" aria-label="Facebook" className="hover:opacity-70"><Facebook className="h-5 w-5" /></a>
+            <a href="https://www.tiktok.com/@sergio.publicaseulivro" target="_blank" rel="noreferrer" aria-label="TikTok" className="hover:opacity-70"><TikTokIcon className="h-5 w-5" /></a>
+            <a href="https://wa.me/351912653896" target="_blank" rel="noreferrer" aria-label="WhatsApp" className="hover:opacity-70"><WhatsAppIcon className="h-5 w-5" /></a>
+            <a href="mailto:sergio.santos@meulivropublicado.com" aria-label="Email" className="hover:opacity-70"><Mail className="h-5 w-5" /></a>
           </div>
         </div>
       </footer>
