@@ -19,8 +19,19 @@ import {
   ArrowRight,
 } from "lucide-react";
 import heroBooks from "@/assets/sergio-portrait.png.asset.json";
-import portfolioImg from "@/assets/portfolio-1.jpg";
 import logo from "@/assets/logo-horizontal.png.asset.json";
+import port1 from "@/assets/portfolio/ARTE_-_alfabetizacao.jpg.asset.json";
+import port2 from "@/assets/portfolio/ARTE_-_camaqua.jpg.asset.json";
+import port3 from "@/assets/portfolio/ARTE_-_direito_internacional.jpg.asset.json";
+import port4 from "@/assets/portfolio/ARTE_-_Interamigos.jpg.asset.json";
+import port5 from "@/assets/portfolio/ARTE_-_memoria_e_cultura.jpg.asset.json";
+import port6 from "@/assets/portfolio/ARTE_-_mosaico.jpg.asset.json";
+import port7 from "@/assets/portfolio/ARTE_-_planificando.jpg.asset.json";
+import port8 from "@/assets/portfolio/ARTE_-_politica_sociedade.jpg.asset.json";
+import port9 from "@/assets/portfolio/ARTE_-_recrie.jpg.asset.json";
+import port10 from "@/assets/portfolio/ARTE_-_retratos.jpg.asset.json";
+
+const portfolioImages = [port1, port2, port3, port4, port5, port6, port7, port8, port9, port10];
 
 const TikTokIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
