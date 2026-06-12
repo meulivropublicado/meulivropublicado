@@ -276,14 +276,9 @@ function Index() {
       {/* NÚMEROS */}
       <section className="bg-white py-24">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="mb-12 flex flex-col gap-4">
-            <div className="flex items-center gap-6">
-              <span className="h-px w-16" style={{ backgroundColor: GREEN, opacity: 0.4 }} />
-              <p className="text-xs uppercase tracking-[0.25em]" style={{ color: GREEN }}>EXPERIÊNCIA TRADUZIDA EM NÚMEROS</p>
-            </div>
-            <div className="text-sm font-medium whitespace-pre-line" style={{ color: GREEN }}>
-              {"\n"}
-            </div>
+          <div className="mb-6 flex items-center gap-6">
+            <span className="h-px w-16" style={{ backgroundColor: GREEN, opacity: 0.4 }} />
+            <p className="text-xs uppercase tracking-[0.25em]" style={{ color: GREEN }}>EXPERIÊNCIA TRADUZIDA EM NÚMEROS</p>
           </div>
           <div className="grid gap-10 md:grid-cols-4">
             {stats.map((s) => (
@@ -293,39 +288,6 @@ function Index() {
                 </div>
                 <p className="mt-3 text-sm font-medium" style={{ color: GREEN }}>{s.label}</p>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CASES */}
-      <section className="py-24" style={{ backgroundColor: CREAM }}>
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="mlp-reveal mb-14 max-w-2xl">
-            <p className="mb-4 text-xs uppercase tracking-[0.25em]" style={{ color: ORANGE }}>Cases</p>
-            <h2 className="font-display text-4xl leading-tight md:text-5xl" style={{ color: GREEN }}>
-              Histórias que se tornaram livros.
-            </h2>
-          </div>
-          <div className="grid gap-8 md:grid-cols-2">
-            {[
-              {
-                tag: "Autora de primeira viagem",
-                text: "Uma autora sem qualquer experiência editorial chegou com um manuscrito em Word. Em 6 semanas, tinha nas mãos um livro com capa profissional, miolo paginado e já disponível para venda. Hoje é autora publicada.",
-              },
-              {
-                tag: "Autor com obra técnica",
-                text: "Um profissional de saúde queria publicar um guia prático para o seu público. O projeto envolveu paginação complexa com tabelas, glossário e índice remissivo. O livro foi impresso em 500 exemplares e distribuído em formação.",
-              },
-            ].map((c) => (
-              <article
-                key={c.tag}
-                className="mlp-reveal relative rounded-sm bg-white p-10 pl-12"
-                style={{ borderLeft: `4px solid ${ORANGE}` }}
-              >
-                <h3 className="font-display text-2xl" style={{ color: GREEN }}>{c.tag}</h3>
-                <p className="mt-4 leading-relaxed" style={{ color: "#4a4a4a" }}>{c.text}</p>
-              </article>
             ))}
           </div>
         </div>
