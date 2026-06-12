@@ -192,7 +192,7 @@ function Index() {
               O teu manuscrito merece <em className="not-italic" style={{ color: ORANGE }}>virar livro</em>
             </h1>
             <p className="mt-6 max-w-md text-lg" style={{ color: "#3d3d3d" }}>
-              Da ideia ao livro nas tuas mãos — sem complicações.
+              O Meu livro Publicado é um projeto idealizado para ajudar autores independentes em todas as etapas de produção do seu livro. Do manuscrito à capa, transformamos o seu sonho em realidade com revisão detalhada, design personalizado e impressão profissional.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <a
