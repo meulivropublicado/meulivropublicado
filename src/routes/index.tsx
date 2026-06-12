@@ -159,21 +159,10 @@ const faqs = [
   { q: "Os direitos do livro ficam comigo?", a: "Sim, sempre. O Meu Livro Publicado presta um serviço editorial, portanto todos os direitos da obra pertencem inteiramente ao autor e nunca cedemos os teus direitos a terceiros." },
 ];
 
-const portfolioFilters = ["Ficção", "Não-ficção", "Poesia", "Técnico", "Infantil"];
-
-const portfolioItems = Array.from({ length: 8 }).map((_, i) => ({
-  title: ["Voz Adentro", "O Caminho das Águas", "Manual do Cuidador", "Pequenos Versos", "Histórias do Tejo", "Guia da Floresta", "Onde Mora o Tempo", "Cartas a Lisboa"][i],
-  author: ["Ana Mendes", "Pedro Lima", "Dra. Rita Faria", "João Costa", "Marta Sousa", "Luís Barreto", "Helena Pires", "Carlos Tavares"][i],
-  category: portfolioFilters[i % portfolioFilters.length],
-}));
-
 function Index() {
   useReveal();
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const [filter, setFilter] = useState<string>("Todos");
   const [menuOpen, setMenuOpen] = useState(false);
-  const filters = ["Todos", ...portfolioFilters];
-  const visible = filter === "Todos" ? portfolioItems : portfolioItems.filter((p) => p.category === filter);
 
   return (
     <div className="min-h-screen bg-white" style={{ color: "#2a2a2a" }}>
