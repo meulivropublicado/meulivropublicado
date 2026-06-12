@@ -117,15 +117,15 @@ const testimonials = [
 ];
 
 const steps = [
-  "Primeiro contacto e análise do manuscrito",
-  "Proposta personalizada",
-  "Revisão e design editorial",
-  "Aprovação do autor",
-  "Impressão e entrega",
+  "Levantamento dos requisitos e proposta personalizada.",
+  "Revisão completa por um profissional qualificado.",
+  "Projeto gráfico, paginação, capas e todos os registos.",
+  "O autor revê e aprova antes de avançarmos para impressão.",
+  "Impressão e envio na morada. Missão cumprida.",
 ];
 
 const faqs = [
-  { q: "Quanto tempo demora o processo?", a: "Em média, entre 6 e 12 semanas, dependendo da extensão do manuscrito e dos serviços contratados." },
+  { q: "Quanto tempo demora o processo?", a: "Em média, entre 10 e 20 semanas, dependendo da extensão do manuscrito e dos serviços contratados." },
   { q: "Preciso de ter o texto finalizado para pedir orçamento?", a: "Não. Podemos analisar mesmo um manuscrito ainda em rascunho e indicar o melhor caminho." },
   { q: "Fazem distribuição em livrarias?", a: "Trabalhamos sobretudo o modelo de autopublicação, mas aconselhamos sobre canais de venda online e em livrarias parceiras." },
   { q: "Qual é o número mínimo de exemplares para impressão?", a: "Trabalhamos a partir de 50 exemplares, com escalas otimizadas para cada tiragem." },
@@ -289,7 +289,7 @@ function Index() {
             {stats.map((s) => (
               <div key={s.label} className="mlp-reveal">
                 <div className="font-display text-5xl md:text-6xl" style={{ color: ORANGE }}>
-                  <Counter end={s.value} prefix={s.prefix ?? ""} suffix={s.suffix ?? ""} />
+                  <Counter end={s.value} prefix={s.prefix ?? ""} suffix={(s as any).suffix ?? ""} />
                 </div>
                 <p className="mt-3 text-sm font-medium" style={{ color: GREEN }}>{s.label}</p>
               </div>
