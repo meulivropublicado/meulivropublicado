@@ -160,7 +160,7 @@ function Index() {
             <a href="#servicos" className="hover:opacity-70">Serviços</a>
             <a href="#portfolio" className="hover:opacity-70">Portfolio</a>
             <a href="#processo" className="hover:opacity-70">Processo</a>
-            <a href="#faq" className="hover:opacity-70">FAQ</a>
+            <a href="#faq" className="hover:opacity-70">PERGUNTAS FREQUENTES</a>
             <a href="#contacto" className="hover:opacity-70">Contacto</a>
           </nav>
           <a
@@ -417,9 +417,9 @@ function Index() {
       <section id="faq" className="py-24" style={{ backgroundColor: CREAM }}>
         <div className="mx-auto max-w-3xl px-6">
           <div className="mlp-reveal mb-12 text-center">
-            <p className="mb-4 text-xs uppercase tracking-[0.25em]" style={{ color: ORANGE }}>FAQ</p>
+            <p className="mb-4 text-xs uppercase tracking-[0.25em]" style={{ color: ORANGE }}>PERGUNTAS FREQUENTES</p>
             <h2 className="font-display text-4xl leading-tight md:text-5xl" style={{ color: GREEN }}>
-              Perguntas frequentes
+              Tens dúvidas? Temos respostas.
             </h2>
           </div>
           <div className="divide-y" style={{ borderColor: "#e5e5e0" }}>
