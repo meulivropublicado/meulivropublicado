@@ -96,7 +96,7 @@ function Counter({ end, prefix = "", suffix = "" }: { end: number; prefix?: stri
 
 const services = [
   { icon: PenLine, title: "Revisão ortográfica e gramatical", desc: "Revisão linguística, sintática e de estilo no padrão editorial, realizada por profissionais qualificados, garantindo um texto limpo e fluente." },
-  { icon: Layout, title: "Design editorial e paginação", desc: "Miolo profissional para livro físico e ebook, com tipografia cuidada e composição que respeita a leitura." },
+  { icon: Layout, title: "Design editorial e paginação", desc: "Projeto gráfico profissional para livro físico e ebook, com composição que respeita a leitura. Registos de ISBN e catalogação da obra." },
   { icon: Palette, title: "Design de capa", desc: "Conceito visual original que traduz a identidade da obra e capta o leitor à primeira vista." },
   { icon: Printer, title: "Impressão e entrega", desc: "Preparação de todos os ficheiros de acordo com os padrões gráficos ou digitais para garantir alta qualidade e valorização do teu livro." },
   { icon: Megaphone, title: "Marketing digital e redes sociais", desc: "Estratégias de conteúdo, gestão das redes sociais e campanhas para autores que desejam alcançar mais leitores." },
@@ -120,8 +120,8 @@ const steps = [
   "Levantamento dos requisitos e proposta personalizada.",
   "Revisão completa por um profissional qualificado.",
   "Projeto gráfico, paginação, capas e todos os registos.",
-  "O autor revê e aprova antes de avançarmos para impressão.",
-  "Impressão e envio na morada. Missão cumprida.",
+  "Aprovação do autor antes de avançarmos para a impressão.",
+  "Impressão e envio dos exemplares na morada. Missão cumprida.",
 ];
 
 const faqs = [
@@ -279,7 +279,7 @@ function Index() {
           <div className="mb-12 flex flex-col gap-4">
             <div className="flex items-center gap-6">
               <span className="h-px w-16" style={{ backgroundColor: GREEN, opacity: 0.4 }} />
-              <p className="text-xs uppercase tracking-[0.25em]" style={{ color: GREEN }}>20 ANOS TRADUZIDOS EM NÚMEROS</p>
+              <p className="text-xs uppercase tracking-[0.25em]" style={{ color: GREEN }}>EXPERIÊNCIA TRADUZIDA EM NÚMEROS</p>
             </div>
             <div className="text-sm font-medium whitespace-pre-line" style={{ color: GREEN }}>
               {"\n"}
@@ -338,7 +338,7 @@ function Index() {
             <div className="max-w-xl">
               <p className="mb-4 text-xs uppercase tracking-[0.25em]" style={{ color: ORANGE }}>Portfolio</p>
               <h2 className="font-display text-4xl leading-tight md:text-5xl" style={{ color: GREEN }}>
-                Obras que ajudámos a nascer.
+                Obras que ajudamos a nascer.
               </h2>
             </div>
             <div className="flex flex-wrap gap-2">
