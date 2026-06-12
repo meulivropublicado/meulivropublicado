@@ -142,7 +142,7 @@ const steps = [
 const faqs = [
   { q: "Quanto tempo demora o processo?", a: "Em média, entre 10 e 20 semanas, dependendo da extensão do manuscrito e dos serviços contratados." },
   { q: "Preciso de ter o texto finalizado para pedir orçamento?", a: "Não. Podes solicitar orçamento se já tiveres um número aproximado de páginas e o formato desejado de livro. No entanto, quanto mais informações concretas, mais preciso será o orçamento." },
-  { q: "Fazem distribuição em livrarias?", a: "Preparamos os ficheiros e apoiamos o processo de distribuição, mas a distribuição em cadeia de livrarias é gerida diretamente pelo autor. Podemos orientar sobre as melhores opções disponíveis para autores independentes em Portugal e no Brasil." },
+  { q: "Fazem distribuição em livrarias?", a: "Preparamos os ficheiros, imprimimos os exemplares e enviamos à morada do autor, mas a distribuição em cadeia de livrarias é gerida diretamente pelo autor. Podemos orientar sobre as melhores opções disponíveis para autores independentes em Portugal e no Brasil." },
   { q: "Qual é o número mínimo de exemplares para impressão?", a: "É possível imprimir a partir de 1 exemplar, ou seja, não é necessário ter um stock mínimo. No entanto, sugerimos uma quantidade mínima para ter um investimento por exemplar muito mais vantajoso." },
   { q: "Trabalham com autores fora de Portugal?", a: "Sim. Para além de Portugal atendemos autores em Espanha e Brasil." },
   { q: "Os direitos do livro ficam comigo?", a: "Sim, sempre. O Meu Livro Publicado presta um serviço editorial, portanto todos os direitos da obra pertencem inteiramente ao autor e nunca cedemos os teus direitos a terceiros." },
