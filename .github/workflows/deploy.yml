@@ -36,8 +36,10 @@ jobs:
       - name: Build project
         run: bun run build
 
-      - name: Create 404 Fallback
-        run: cp ./dist/index.html ./dist/404.html || echo "No dist folder"
+      - name: Fix SPA Routing for Lovable
+        run: |
+          cp ./dist/index.html ./dist/404.html
+          echo '{"unlisted":true}' > ./dist/robots.txt
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
