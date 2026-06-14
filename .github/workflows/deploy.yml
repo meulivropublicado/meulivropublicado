@@ -36,10 +36,9 @@ jobs:
       - name: Build project
         run: bun run build
 
-      - name: Fix Routing for TanStack
+      - name: Fix Routing for Lovable
         run: |
           if [ -d ".output/public" ]; then cp .output/public/index.html .output/public/404.html; fi
-          if [ -d "dist" ]; then cp dist/index.html dist/404.html; fi
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
