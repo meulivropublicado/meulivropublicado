@@ -356,15 +356,23 @@ function Index() {
               </h2>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
             {portfolioImages.map((img, i) => (
-              <figure key={i} className="mlp-reveal group overflow-hidden rounded-sm">
-                <img
-                  src={img.url}
-                  alt=""
-                  loading="lazy"
-                  className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.03]"
-                />
+              <figure key={i} className="mlp-reveal group">
+                <div className="relative">
+                  <div
+                    className="absolute -left-3 -top-3 h-full w-full rounded-sm border"
+                    style={{ borderColor: GREEN }}
+                  />
+                  <div className="relative overflow-hidden rounded-sm">
+                    <img
+                      src={img.url}
+                      alt=""
+                      loading="lazy"
+                      className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                    />
+                  </div>
+                </div>
               </figure>
             ))}
           </div>
