@@ -163,6 +163,7 @@ function Index() {
   useReveal();
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
     <div className="min-h-screen bg-white" style={{ color: "#2a2a2a" }}>
