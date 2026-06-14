@@ -36,9 +36,18 @@ jobs:
       - name: Build project
         run: bun run build
 
-      - name: Fix Routing for Lovable
+      - name: Auto-Detect Output Directory
+        id: detect-path
         run: |
-          if [ -d ".output/public" ]; then cp .output/public/index.html .output/public/404.html; fi
+          if [ -d "dist" ]; then
+            echo "target_path=dist" >> $GITHUB_ENV
+          elif [ -d ".output/public" ]; then
+            echo "target_path=.output/public" >> $GITHUB_ENV
+          elif [ -d "output/public" ]; then
+            echo "target_path=output/public" >> $GITHUB_ENV
+          else
+            echo "target_path=." >> $GITHUB_ENV
+          fi
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -46,7 +55,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.output/public'
+          path: ${{ env.target_path }}
 
       - name: Deploy to GitHub Pages
         id: deployment
