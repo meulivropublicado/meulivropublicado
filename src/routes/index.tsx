@@ -585,6 +585,29 @@ function Index() {
           </div>
         </div>
       </footer>
+
+      {/* PORTFOLIO LIGHTBOX */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button
+            type="button"
+            aria-label="Fechar"
+            className="absolute right-4 top-4 rounded-full bg-white/10 p-2 text-white transition hover:bg-white/20"
+            onClick={() => setSelectedImage(null)}
+          >
+            <X className="h-6 w-6" />
+          </button>
+          <img
+            src={selectedImage}
+            alt=""
+            className="max-h-[85vh] max-w-full rounded-sm object-contain shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </div>
   );
 }
