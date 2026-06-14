@@ -36,9 +36,10 @@ jobs:
       - name: Build project
         run: bun run build
 
-      - name: Fix SPA Routing for Lovable
+      - name: Fix Routing for TanStack
         run: |
-          cp .output/public/index.html .output/public/404.html || echo "No index.html found"
+          if [ -d ".output/public" ]; then cp .output/public/index.html .output/public/404.html; fi
+          if [ -d "dist" ]; then cp dist/index.html dist/404.html; fi
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
