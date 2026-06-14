@@ -38,8 +38,7 @@ jobs:
 
       - name: Fix SPA Routing for Lovable
         run: |
-          cp ./dist/index.html ./dist/404.html
-          echo '{"unlisted":true}' > ./dist/robots.txt
+          cp .output/public/index.html .output/public/404.html || echo "No index.html found"
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -47,7 +46,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'
+          path: '.output/public'
 
       - name: Deploy to GitHub Pages
         id: deployment
