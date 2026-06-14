@@ -163,6 +163,15 @@ function Index() {
   useReveal();
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedImage(null);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
   return (
     <div className="min-h-screen bg-white" style={{ color: "#2a2a2a" }}>
@@ -369,7 +378,8 @@ function Index() {
                       src={img.url}
                       alt=""
                       loading="lazy"
-                      className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                      className="aspect-[4/3] w-full cursor-pointer object-cover transition duration-500 group-hover:scale-[1.03]"
+                      onClick={() => setSelectedImage(img.url)}
                     />
                   </div>
                 </div>
@@ -575,6 +585,29 @@ function Index() {
           </div>
         </div>
       </footer>
+
+      {/* PORTFOLIO LIGHTBOX */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button
+            type="button"
+            aria-label="Fechar"
+            className="absolute right-4 top-4 rounded-full bg-white/10 p-2 text-white transition hover:bg-white/20"
+            onClick={() => setSelectedImage(null)}
+          >
+            <X className="h-6 w-6" />
+          </button>
+          <img
+            src={selectedImage}
+            alt=""
+            className="max-h-[85vh] max-w-full rounded-sm object-contain shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </div>
   );
 }
