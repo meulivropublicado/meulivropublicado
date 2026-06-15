@@ -595,24 +595,46 @@ function Index() {
       </footer>
 
       {/* PORTFOLIO LIGHTBOX */}
-      {selectedImage && (
+      {selectedIndex !== null && (
         <div
           className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4"
-          onClick={() => setSelectedImage(null)}
+          onClick={() => setSelectedIndex(null)}
         >
           <button
             type="button"
             aria-label="Fechar"
             className="absolute right-4 top-4 rounded-full bg-white/10 p-2 text-white transition hover:bg-white/20"
-            onClick={() => setSelectedImage(null)}
+            onClick={() => setSelectedIndex(null)}
           >
             <X className="h-6 w-6" />
           </button>
+          <button
+            type="button"
+            aria-label="Anterior"
+            className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white transition hover:bg-white/20"
+            onClick={(e) => {
+              e.stopPropagation();
+              setSelectedIndex((i) => (i === null ? null : i === 0 ? portfolioImages.length - 1 : i - 1));
+            }}
+          >
+            <ChevronLeft className="h-8 w-8" />
+          </button>
+          <button
+            type="button"
+            aria-label="Seguinte"
+            className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white transition hover:bg-white/20"
+            onClick={(e) => {
+              e.stopPropagation();
+              setSelectedIndex((i) => (i === null ? null : i === portfolioImages.length - 1 ? 0 : i + 1));
+            }}
+          >
+            <ChevronRight className="h-8 w-8" />
+          </button>
           <img
-            src={selectedImage}
+            src={portfolioImages[selectedIndex].url}
             alt=""
-            className="max-h-[85vh] max-w-full rounded-sm object-contain shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
+            className="max-h-[85vh] max-w-full cursor-pointer rounded-sm object-contain shadow-2xl"
+            onClick={() => setSelectedIndex(null)}
           />
         </div>
       )}
