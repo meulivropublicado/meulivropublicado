@@ -255,7 +255,7 @@ function Index() {
         <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-2 md:py-28">
           <div className="mlp-reveal">
             <p className="mb-5 inline-block border-l-2 pl-3 text-sm uppercase tracking-[0.2em]" style={{ borderColor: ORANGE, color: GREEN }}>
-              PUBLICAÇÃO INDEPENDENTE
+              SOBRE O PROJETO
             </p>
             <h1 className="font-display text-5xl leading-[1.05] md:text-6xl" style={{ color: GREEN }}>
               O teu manuscrito merece <em className="not-italic" style={{ color: ORANGE }}>virar livro.</em>
@@ -294,7 +294,7 @@ function Index() {
       <section id="sobre" className="bg-white py-24">
         <div className="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-12">
           <div className="mlp-reveal md:col-span-5">
-            <p className="mb-4 text-xs uppercase tracking-[0.25em]" style={{ color: ORANGE }}>PUBLICAÇÃO INDEPENDENTE</p>
+            <p className="mb-4 text-xs uppercase tracking-[0.25em]" style={{ color: ORANGE }}>SOBRE O PROJETO</p>
             <h2 className="font-display text-4xl leading-tight md:text-5xl" style={{ color: GREEN }}>
               Profissionais ao lado de quem escreve.
             </h2>
