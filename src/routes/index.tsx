@@ -387,7 +387,7 @@ function Index() {
                       alt=""
                       loading="lazy"
                       className="aspect-[4/3] w-full cursor-pointer object-cover transition duration-500 group-hover:scale-[1.03]"
-                      onClick={() => setSelectedImage(img.url)}
+                      onClick={() => setSelectedIndex(i)}
                     />
                   </div>
                 </div>
