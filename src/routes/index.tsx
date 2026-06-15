@@ -165,15 +165,21 @@ function Index() {
   useReveal();
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setSelectedImage(null);
+      if (e.key === "Escape") setSelectedIndex(null);
+      if (e.key === "ArrowLeft" && selectedIndex !== null) {
+        setSelectedIndex((i) => (i === null ? null : i === 0 ? portfolioImages.length - 1 : i - 1));
+      }
+      if (e.key === "ArrowRight" && selectedIndex !== null) {
+        setSelectedIndex((i) => (i === null ? null : i === portfolioImages.length - 1 ? 0 : i + 1));
+      }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, []);
+  }, [selectedIndex]);
 
   return (
     <div className="min-h-screen bg-white" style={{ color: "#2a2a2a" }}>
