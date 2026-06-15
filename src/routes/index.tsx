@@ -17,6 +17,8 @@ import {
   X,
   Quote,
   ArrowRight,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import heroBooks from "@/assets/sergio-portrait.png.asset.json";
 import logo from "@/assets/logo-horizontal.png.asset.json";
