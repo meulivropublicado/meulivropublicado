@@ -20,6 +20,8 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
+import { useServerFn } from "@tanstack/react-start";
+import { submitContact } from "@/lib/contact.functions";
 import heroBooks from "@/assets/sergio-portrait.png.asset.json";
 import logo from "@/assets/logo-horizontal.png.asset.json";
 import port1 from "@/assets/portfolio/ARTE_-_alfabetizacao.jpg.asset.json";
@@ -133,7 +135,7 @@ const services = [
 
 const stats = [
   { value: 400, prefix: "+", label: "Autores acompanhados" },
-  { value: 700, prefix: "+", label: "Obras publicadas" },
+  { value: 400, prefix: "+", label: "Obras publicadas" },
   { value: 200000, prefix: "+", label: "Livros impressos" },
   { value: 20, prefix: "+", label: "Anos de experiência" },
 ];
@@ -166,6 +168,8 @@ function Index() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [menuOpen, setMenuOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [formStatus, setFormStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const submitContactFn = useServerFn(submitContact);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -533,9 +537,25 @@ function Index() {
                 </a>
               </div>
               <form
-                onSubmit={(e) => {
+                onSubmit={async (e) => {
                   e.preventDefault();
-                  alert("Obrigado! Entraremos em contacto em breve.");
+                  const formEl = e.currentTarget;
+                  const fd = new FormData(formEl);
+                  setFormStatus("sending");
+                  const res = await submitContactFn({
+                    data: {
+                      name: String(fd.get("nome") ?? ""),
+                      email: String(fd.get("email") ?? ""),
+                      phone: String(fd.get("telefone") ?? ""),
+                      message: String(fd.get("mensagem") ?? ""),
+                    },
+                  });
+                  if (res.ok) {
+                    setFormStatus("sent");
+                    formEl.reset();
+                  } else {
+                    setFormStatus("error");
+                  }
                 }}
                 className="space-y-4"
               >
@@ -562,12 +582,23 @@ function Index() {
                   className="w-full rounded-sm border bg-white px-4 py-3 text-sm outline-none transition focus:border-[color:var(--brand-green)]"
                   style={{ borderColor: "#d8d8d2", color: GREEN }}
                 />
+                {formStatus === "sent" && (
+                  <p className="text-sm font-medium" style={{ color: GREEN }}>
+                    Obrigado! A tua mensagem foi recebida e iremos responder em breve.
+                  </p>
+                )}
+                {formStatus === "error" && (
+                  <p className="text-sm font-medium" style={{ color: ORANGE }}>
+                    Não foi possível enviar. Tenta novamente ou fala connosco no WhatsApp.
+                  </p>
+                )}
                 <button
                   type="submit"
-                  className="w-full rounded-full py-4 text-sm font-medium text-white transition hover:opacity-95"
+                  disabled={formStatus === "sending"}
+                  className="w-full rounded-full py-4 text-sm font-medium text-white transition hover:opacity-95 disabled:opacity-60"
                   style={{ backgroundColor: ORANGE }}
                 >
-                  Enviar mensagem
+                  {formStatus === "sending" ? "A enviar..." : "Enviar mensagem"}
                 </button>
               </form>
             </div>
