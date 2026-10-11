@@ -17,7 +17,7 @@ const hits = new Map<string, number[]>();
 export const submitContact = createServerFn({ method: "POST" })
   .inputValidator((input: unknown) => submissionSchema.parse(input))
   .handler(async ({ data }) => {
-    const ip = getRequestHeader("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+    const ip = getRequestIP({ xForwardedFor: true }) || "unknown";
     const now = Date.now();
     const recent = (hits.get(ip) ?? []).filter((t) => now - t < WINDOW_MS);
     if (recent.length >= MAX_PER_WINDOW) {
