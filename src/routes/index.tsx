@@ -135,7 +135,7 @@ const services = [
 
 const stats = [
   { value: 400, prefix: "+", label: "Autores acompanhados" },
-  { value: 700, prefix: "+", label: "Obras publicadas" },
+  { value: 400, prefix: "+", label: "Obras publicadas" },
   { value: 200000, prefix: "+", label: "Livros impressos" },
   { value: 20, prefix: "+", label: "Anos de experiência" },
 ];
